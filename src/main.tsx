@@ -6,6 +6,8 @@ import { UserAuthContextProvider } from "./context/UserAuthContext.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./componets/Login.tsx";
 import Register from "./componets/Register.tsx";
+import Home from "../src/Home.tsx";
+import ProtectedRoute from "./auth/ProtectedRoute.tsx";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +21,14 @@ const router = createBrowserRouter([
   {
     path: "/register",
     element: <Register />,
+  },
+  {
+    path: "/home",
+    element: (
+      <ProtectedRoute>
+        <Home />
+      </ProtectedRoute>
+    ),
   },
 ]);
 

@@ -15,6 +15,7 @@ export default function Register({}: Props) {
 
   const handleSumbit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault(); // avoid page refresh
+    setError("");
     try {
       await signup(email, password);
       navigate("/");
@@ -40,8 +41,8 @@ export default function Register({}: Props) {
             <FormGroup className=" mb-3" controlId="formBasicEmail">
               <FormControl
                 type="email"
-                placeholder="Enter email"
-                onChange={(e: any) => e.target.value}
+                placeholder="Email address"
+                onChange={(e: any) => setEmail(e.target.value)}
                 className="rounded w-full"
               ></FormControl>
             </FormGroup>
@@ -49,7 +50,7 @@ export default function Register({}: Props) {
               <FormControl
                 type="password"
                 placeholder="Enter password"
-                onChange={(e: any) => e.target.value}
+                onChange={(e: any) => setPassword(e.target.value)}
                 className=" rounded w-full"
               ></FormControl>
             </FormGroup>

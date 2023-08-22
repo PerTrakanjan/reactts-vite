@@ -15,7 +15,7 @@ type Props = {
 const userAuthContext = createContext<any>({});
 
 export function UserAuthContextProvider({ children }: Props) {
-  const [user, setUser] = useState<unknown>({});
+  const [user, setUser] = useState<any>({});
 
   function login(email: string, password: string) {
     return signInWithEmailAndPassword(auth, email, password);
