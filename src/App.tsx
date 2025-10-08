@@ -4,5 +4,10 @@ import Post from "./componets/post";
 type Props = {};
 
 export default function App({}: Props) {
-  return <></>;
+  return ( 
+    <>
+      <Chat />
+      <Post />
+    </>
+   );
 }
